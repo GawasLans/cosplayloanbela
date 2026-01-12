@@ -110,6 +110,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog/static'),
 ]
 
+# URL base para acceder a los archivos multimedia
+MEDIA_URL = '/media/'
+
+# Ruta absoluta donde se guardarán los archivos
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

@@ -11,33 +11,18 @@
     <section class="category-preview">
         <h2 class="category-title">Loan <small style="font-size: 0.5em; color: #888;">// Solo</small></h2>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/333/fff?text=Loan+1" alt="Cosplay Loan"></div>
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/333/fff?text=Loan+2" alt="Cosplay Loan"></div>
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/333/fff?text=Loan+3" alt="Cosplay Loan"></div>
+            
+            {% for cosplay in loan_images %}
+            <div class="gallery-item">
+                <img src="{{ cosplay.image.url }}" alt="{{ cosplay.title }}">
+            </div>
+            {% empty %}
+            <p style="color: #888; padding: 20px;">Pronto subiremos contenido de Loan...</p>
+            {% endfor %}
+
             <div class="gallery-item" style="display: flex; align-items: center; justify-content: center; background: #2a2a2a;">
-                <a href="#" style="color: white; text-decoration: none;">Ver galería completa &rarr;</a>
+                <a href="#" style="color: white; text-decoration: none; font-weight: bold;">Ver galería completa &rarr;</a>
             </div>
-        </div>
-    </section>
-
-    <section class="category-preview">
-        <h2 class="category-title">Bela <small style="font-size: 0.5em; color: #888;">// Solo</small></h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/444/fff?text=Bela+1" alt="Cosplay Bela"></div>
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/444/fff?text=Bela+2" alt="Cosplay Bela"></div>
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/444/fff?text=Bela+3" alt="Cosplay Bela"></div>
-             <div class="gallery-item" style="display: flex; align-items: center; justify-content: center; background: #2a2a2a;">
-                <a href="#" style="color: white; text-decoration: none;">Ver galería completa &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="category-preview">
-        <h2 class="category-title">Loan + Bela <small style="font-size: 0.5em; color: #888;">// Team</small></h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/555/fff?text=Duo+1" alt="Cosplay Duo"></div>
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/555/fff?text=Duo+2" alt="Cosplay Duo"></div>
-            <div class="gallery-item"><img src="https://via.placeholder.com/300x400/555/fff?text=Duo+3" alt="Cosplay Duo"></div>
         </div>
     </section>
 
