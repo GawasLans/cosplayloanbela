@@ -1,0 +1,152 @@
+/* blog/static/blog/css/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #121212;       /* Fondo oscuro elegante */
+    --text-color: #f5f5f5;     /* Texto casi blanco */
+    --accent-color: #bb86fc;   /* Un toque violeta suave (muy cosplay) */
+    --secondary-bg: #1e1e1e;   /* Fondo para tarjetas/bloques */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER & NAV --- */
+header {
+    background-color: rgba(18, 18, 18, 0.95);
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+main {
+    flex: 1; /* Empuja el footer hacia abajo */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- SECCIONES DE INICIO --- */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.category-preview {
+    margin-bottom: 80px;
+}
+
+.category-title {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+/* --- GRID DE IMÁGENES (RESPONSIVE) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    background-color: var(--secondary-bg);
+    height: 350px; /* Altura fija para uniformidad */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la foto llene el cuadro sin deformarse */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--secondary-bg);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    nav ul {
+        margin-top: 15px;
+        gap: 15px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+}

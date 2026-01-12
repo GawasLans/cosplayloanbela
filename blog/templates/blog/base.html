@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Loan & Bela Cosplay{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <a href="{% url 'index' %}" class="logo">L&B COSPLAY</a>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="#">Loan</a></li>
+                <li><a href="#">Bela</a></li>
+                <li><a href="#">Duo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Loan & Bela Cosplay Portfolio.</p>
+        <p>Diseñado con pasión.</p>
+    </footer>
+
+</body>
+</html>
